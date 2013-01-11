@@ -432,7 +432,7 @@ static int app_exec(struct ast_channel *chan, const char *data)
 
 				if (!f) {
 					ast_log(LOG_DEBUG, "Null frame == hangup() detected\n");
-					res = -1;
+					res = SWIFT_SUCCESS;
 					ASTOBJ_WRLOCK(ps);
 					ps->immediate_exit = 1;
 					ASTOBJ_UNLOCK(ps);
