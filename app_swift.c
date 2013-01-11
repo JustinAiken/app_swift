@@ -156,7 +156,7 @@ static swift_result_t swift_cb(swift_event *event, swift_event_t type, void *uda
 		rv = swift_event_get_audio(event, &buf, &len);
 
 		if (!SWIFT_FAILED(rv) && len > 0) {
-			ast_log(LOG_DEBUG, "audio callback\n");
+			// ast_log(LOG_DEBUG, "audio callback\n");
 			ASTOBJ_WRLOCK(ps);
 
 			/* Sleep while waiting for some queue space to become available */
@@ -190,7 +190,7 @@ static swift_result_t swift_cb(swift_event *event, swift_event_t type, void *uda
 				ps->pq_w += len - spacefree;
 				ps->qc += len - spacefree;
 			} else {
-				ast_log(LOG_DEBUG, "audio easy write, %d avail to end %d totalavail\n", spacefree, cfg_buffer_size - ps->qc);
+				// ast_log(LOG_DEBUG, "audio easy write, %d avail to end %d totalavail\n", spacefree, cfg_buffer_size - ps->qc);
 				memcpy(ps->pq_w, buf, len);
 				ps->pq_w += len;
 				ps->qc += len;
