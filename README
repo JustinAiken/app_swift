@@ -1,9 +1,10 @@
-app_swift patched by @libryder to work with Asterisk 1.8 when playing back audio files...
+app_swift patched by @libryder and me to work with Asterisk 1.8 when playing back audio files...
 
 Usage:
 
-git clone git@github.com:JustinAiken/app_swift.git
+git clone https://github.com/JustinAiken/app_swift.git 
 cd app_swift
+git checkout develop
 sudo make
 sudo make install
 sudo asterisk -rx "core restart now"
